@@ -18,6 +18,10 @@ public class UserServlet extends BaseServlet {
      * 检查session是否过期
      * @throws IOException
      */
+    /**
+     * 检查session是否过期
+     * @throws IOException
+     */
     public String check(HttpServletRequest req,HttpServletResponse resp) throws IOException{
         // 从session中获得用户的信息
         User existUser = (User) req.getSession().getAttribute("existUser");
