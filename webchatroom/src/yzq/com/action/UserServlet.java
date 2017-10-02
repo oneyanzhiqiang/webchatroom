@@ -18,11 +18,7 @@ public class UserServlet extends BaseServlet {
      * 检查session是否过期
      * @throws IOException
      */
-    /**
-     * 检查session是否过期
-     * @throws IOException
-     */
-    public String check(HttpServletRequest req,HttpServletResponse resp) throws IOException{
+    public String check(HttpServletRequest req, HttpServletResponse resp) throws IOException{
         // 从session中获得用户的信息
         User existUser = (User) req.getSession().getAttribute("existUser");
         // 判断session中的用户是否过期
@@ -138,8 +134,7 @@ public class UserServlet extends BaseServlet {
 
                 // 第二个BUG的解决:判断用户是否已经在Map集合中,存在：已经在列表中.销毁其session.
                 // 获得到ServletCOntext中存的Map集合.
-                Map<User, HttpSession> userMap = (Map<User, HttpSession>) getServletContext()
-                        .getAttribute("userMap");
+                Map<User, HttpSession> userMap = (Map<User, HttpSession>) getServletContext().getAttribute("userMap");
                 // 判断用户是否已经在map集合中'
                 if(userMap.containsKey(existUser)){
                     // 说用map中有这个用户.
